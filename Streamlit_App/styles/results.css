@@ -1,0 +1,137 @@
+/* =========================================================
+   RESULTS PAGE — minimal, decision-first layout
+   (approval banner, confidence bar, stat cards, outcome table)
+   ========================================================= */
+
+.st-key-sfresultswrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 64px 24px;
+}
+
+.st-key-sfresultsnewappbtn {
+  margin-top: 32px;
+}
+.st-key-sfresultsnewappbtn div[data-testid="stButton"] {
+  display: flex;
+  justify-content: center;
+}
+.st-key-sfresultsnewappbtn div[data-testid="stButton"] button {
+  width: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* ---------- Approval / denial banner ---------- */
+.sf-result-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 32px;
+  border: 1px solid;
+}
+
+.sf-result-banner.approved {
+  background: rgba(15, 157, 107, 0.08);
+  border-color: rgba(15, 157, 107, 0.35);
+}
+.sf-result-banner.denied {
+  background: rgba(193, 58, 58, 0.07);
+  border-color: rgba(193, 58, 58, 0.3);
+}
+
+.sf-result-banner-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  color: #fff;
+}
+.sf-result-banner-icon.approved { background: var(--success); }
+.sf-result-banner-icon.denied { background: var(--error); }
+
+.sf-result-banner-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.sf-result-banner-title.approved { color: var(--success); }
+.sf-result-banner-title.denied { color: var(--error); }
+
+.sf-result-banner-desc {
+  font-size: 14.5px;
+  color: var(--on-surface-variant);
+}
+.sf-result-banner-desc b {
+  color: var(--on-surface);
+}
+
+/* ---------- Confidence bar ---------- */
+.sf-confidence-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.sf-confidence-track {
+  width: 100%;
+  height: 10px;
+  background: var(--surface-container-high);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.sf-confidence-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+.sf-confidence-fill.approved { background: var(--gradient-navy); }
+.sf-confidence-fill.denied { background: linear-gradient(135deg, var(--error) 0%, #E38B8B 100%); }
+
+/* ---------- Outcome / probability table ---------- */
+.sf-outcome-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 32px;
+}
+
+.sf-outcome-table th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--on-surface-variant);
+  background: var(--surface-container-low);
+  padding: 14px 22px;
+}
+
+.sf-outcome-table td {
+  padding: 14px 22px;
+  font-size: 15px;
+  border-top: 1px solid var(--outline-variant);
+}
+
+.sf-outcome-table tr td:first-child {
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.sf-outcome-table tr td:last-child {
+  font-variant-numeric: tabular-nums;
+  color: var(--on-surface-variant);
+}
